@@ -250,4 +250,3 @@ The schematic shows the overall design:
 
 These four images together document how the PCB implements the firmware concept in hardware: Pico in the center, IMU close and quiet, and all GPIOs still available through the side headers.
 
-```
