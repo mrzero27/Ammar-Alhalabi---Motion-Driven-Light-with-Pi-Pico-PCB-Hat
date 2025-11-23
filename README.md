@@ -207,3 +207,47 @@ Field meanings:
 
 ---
 
+## 5. PCB Layout & 3D Views
+
+### 5.1 Top 3D view – Pico plugged into the hat
+
+![Top 3D view – Pico hat](https://github.com/mrzero27/Ammar-Alhalabi---Motion-Driven-Light-with-Pi-Pico-PCB-Hat/blob/main/3D%20View%20Top.png)
+
+This render shows the **Raspberry Pi Pico** plugged into the custom hat.
+You can see the **stacking headers** on both sides, the LEDs along the Pico edge, and the overall mechanical outline with four mounting holes.
+The silkscreen at the bottom credits the designer and clearly labels the board.
+
+---
+
+### 5.2 Bottom 3D view – IMU and passives
+
+![Bottom 3D view – IMU section](https://github.com/mrzero27/Ammar-Alhalabi---Motion-Driven-Light-with-Pi-Pico-PCB-Hat/blob/main/3D%20View%20Bottom.png)
+
+This is the **bottom side** of the PCB.
+In the middle you can see the **MPU-6050** IMU and its surrounding capacitors and resistors (decoupling and pull-ups).
+The four long female headers give access to all Pico GPIO pins while keeping the IMU wiring short and symmetric.
+
+---
+
+### 5.3 Top copper/layout view – routing and keep-out
+
+![2D layout – routing](https://github.com/mrzero27/Ammar-Alhalabi---Motion-Driven-Light-with-Pi-Pico-PCB-Hat/blob/main/PCB%20Layout.png)
+
+This 2D layout view shows the **copper pours, traces and keep-out area** under the Pico’s antenna.
+You can see how the I²C lines from the Pico are routed cleanly to the IMU, how the ground pour ties everything together, and how the four mounting holes define the mechanical footprint.
+
+---
+
+### 5.4 Schematic – Pico, IMU and indicators
+
+![Schematic – Pico + MPU-6050](https://github.com/mrzero27/Ammar-Alhalabi---Motion-Driven-Light-with-Pi-Pico-PCB-Hat/blob/main/Schematic.png)
+
+The schematic shows the overall design:
+
+* On the left, the **MPU-6050** with its power decoupling capacitors, I²C pull-up resistors and address pin configuration.
+* At the top, **SDA/SCL indicator LEDs** with series resistors so you can visually see I²C activity.
+* On the right, the **Raspberry Pi Pico** with both 20-pin headers broken out and power rails (3V3, VSYS/VBUS, GND) distributed to the connectors.
+
+These four images together document how the PCB implements the firmware concept in hardware: Pico in the center, IMU close and quiet, and all GPIOs still available through the side headers.
+
+```
